@@ -15,12 +15,15 @@ namespace Exerc3Poo
             return nota1 + nota2 + nota3;  
         }
 
+        public double calcularRestante()
+        {
+            return 60.00 - somar();
+        }
+
         public override string ToString()
         {
-            double restante = 60.00 - somar(); 
-                    
             Console.WriteLine($"NOTA FINAL = {somar().ToString("F2", CultureInfo.InvariantCulture)}");
-            return somar() >= 60.00 ? "APROVADO" : $"REPROVADO\nFALTARAM {restante.ToString("F2", CultureInfo.InvariantCulture)} PONTOS";     
+            return somar() >= 60.00 ? "APROVADO" : $"REPROVADO\nFALTARAM {calcularRestante().ToString("F2", CultureInfo.InvariantCulture)} PONTOS";     
         }
     }
 }
